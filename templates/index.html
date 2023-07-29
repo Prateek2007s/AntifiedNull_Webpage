@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AntifiedNull Video Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="logo">AntifiedNull Video Player</h1>
+        <a href="https://www.youtube.com/channel/UCf-8BI21ZeiQuLYF8m96OEA" target="_blank">
+            <img src="{{ url_for('static', filename='youtube_logo.png') }}" alt="YouTube Channel" class="social-icon">
+        </a>
+        <a href="https://t.me/X_AntifiedNull_Channel_X" target="_blank">
+            <img src="{{ url_for('static', filename='telegram_logo.png') }}" alt="Telegram Channel" class="social-icon">
+        </a>
+    </header>
+    <div class="video-form-container">
+        <h2>Welcome to AntifiedNull Video Player</h2>
+        <form method="post">
+            {{ form.csrf_token }}
+            {{ form.video_url.label }} {{ form.video_url(size=80) }}<br>
+            {{ form.submit }}
+        </form>
+    </div>
+    <div class="channel-link">
+        <h3>YouTube Channel:</h3>
+        <a href="https://www.youtube.com/channel/UCf-8BI21ZeiQuLYF8m96OEA" target="_blank">AntifiedNull YouTube Channel</a>
+    </div>
+    <footer>
+        &copy; {{ current_year }} AntifiedNull. All rights reserved.
+    </footer>
+</body>
+</html>
